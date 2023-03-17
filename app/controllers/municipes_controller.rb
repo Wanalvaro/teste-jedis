@@ -5,12 +5,15 @@ class MunicipesController < ApplicationController
 
   def index
     if params[:name].present?
-      @municipes = Municipe.search_by_name(params[:name])
+      @municipes = Municipe.search_by_name(params[:name]).decorate
+      if @municipes.empty?
+        flash.now[:notice] = "Nenhum munícipe com esse nome encontrado."
+      end
     else
-    @municipes = Municipe.all.decorate
+      @municipes = Municipe.all.decorate
+    end
   end
- end 
-
+  
   def new
     @municipe = Municipe.new
     @municipe.build_endereco

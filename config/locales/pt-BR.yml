@@ -38,8 +38,8 @@ pt-BR:
       add: "Adicionar Munícipe"
   titles:
     actions:
-      one: "Ações"
-      edit: "Editar"
+      one: "Opções"
+      edit: "Editar Cadastro"
       save: "Salvar"
       enter: "Entrar"
       register: "Cadastrar-se"

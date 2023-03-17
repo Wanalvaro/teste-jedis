@@ -1,9 +1,10 @@
 <% if @municipes.any? %>
 <h3 class="title"> Munícipes Cadastrados </h3>
 
-     <input type="text" id="search-name" placeholder="Pesquisar por nome">
-     <button id="search-button">Pesquisar</button>
-
+    <%= form_tag(municipes_path, method: "get") do %>
+       <%= text_field_tag :name, params[:name], placeholder: "Pesquisar por nome" %>
+      <%= submit_tag "Pesquisar", id: "search-button", class: "btn btn-default btn-success" %>
+    <% end %>
 
 	<table class="table table-striped table-bordered table-hover">
 		<thead>
